@@ -31,7 +31,8 @@ numberpixels = np.empty(image1_height)
 for i in range(0,image1_height):
     
     #correlations =  np.correlate(image1_array[i], image2_array[i], mode='full')
-    correlations =  np.correlate(image2_array[i], image1_array[i], mode='full')[image1_width:]
+    #correlations =  np.correlate(image2_array[i], image1_array[i], mode='full')[image1_width:]
+    correlations =  np.correlate(image2_array[i], image1_array[i], mode='full')
     
     
     #print (correlations.shape)
@@ -39,12 +40,12 @@ for i in range(0,image1_height):
     max = np.max(correlations)
     conditon = (correlations == max)
     #print  (np.where(conditon)[0])
-    numberpixels[i] = np.where(conditon)[0]
+    numberpixels[i] = np.where(conditon)[0] - image1_width
     #print( np.correlate(image1_array[i].flatten(), image2_array[i].flatten()))
 
 #print (correlations)
 xpoints = np.array(range(0, image1_height))
 plt.plot(xpoints, numberpixels)
-#plt.savefig("gragh_best.png")
+plt.savefig("gragh_best.png")
 plt.show()
 
