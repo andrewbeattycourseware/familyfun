@@ -44,6 +44,7 @@ for i in range(0,image1_height):
 
 #print (correlations)
 xpoints = np.array(range(0, image1_height))
-#plt.plot(xpoints, numberpixels)
+plt.plot(xpoints, numberpixels)
+plt.savefig("gragh1.png")
 #plt.show()
 
