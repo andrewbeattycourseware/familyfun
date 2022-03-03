@@ -40,7 +40,7 @@ for i in range(0,image1_height):
     max = np.max(correlations)
     conditon = (correlations == max)
     #print  (np.where(conditon)[0])
-    numberpixels[i] = np.where(conditon)[0] - image1_width
+    numberpixels[i] = np.where(conditon)[0] - (image1_width - 1)
     #print( np.correlate(image1_array[i].flatten(), image2_array[i].flatten()))
 
 #print (correlations)
