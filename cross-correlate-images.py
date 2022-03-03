@@ -29,10 +29,6 @@ image2_array = np.array(image2).astype(np.float)
 numberpixels = np.empty(image1_height)
 
 for i in range(0,image1_height):
-    # need to flatten the 2d to 1d
-    # ref https://janetpanic.com/how-do-you-convert-2d-to-1d/#:~:text=The%20flatten%20function%20in%20numpy%20is%20a%20direct,a%202D%20NumPy%20array%20into%20a%201D%20array
-    #print("shape of row is", image1_array[i,].flatten().shape)
-    
     
     #correlations =  np.correlate(image1_array[i], image2_array[i], mode='full')
     correlations =  np.correlate(image2_array[i], image1_array[i], mode='full')[image1_width:]
