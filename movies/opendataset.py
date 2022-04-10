@@ -39,7 +39,7 @@ def readitems(num):
     # the user file is not a tab separated list the items are seperted with a |
     # I have had to delete the last blank line from the dataset
     df = pd.read_csv(DATA_DIR+ITEM_FILE, sep="|", names=header_names,  nrows=num)
-    print(df.head())
+    #print(df.head())
     return df
 
 
@@ -48,7 +48,7 @@ def readdata():
     # the user file is not a tab separated list the items are seperted with a |
     # I have had to delete the last blank line from the dataset
     df = pd.read_csv(DATA_DIR+DATA_FILE, names=header_names, sep="\t")
-    print(df.head())
+    #print(df.head())
     return df
 
 
